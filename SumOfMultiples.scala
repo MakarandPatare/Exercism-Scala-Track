@@ -1,5 +1,5 @@
 object SumOfMultiples {
   def sum(factors: Set[Int], limit: Int): Int = {
-    factors.flatMap(x => x until (limit, x)).sum
+    (1 until limit).filter(num => factors.exists(num % _ == 0)).sum  
   }
 }
